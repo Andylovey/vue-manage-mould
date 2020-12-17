@@ -1,21 +1,7 @@
-# vue-manage-mould
+```bash
 
-> A Vue.js project
+npm run dev  项目开启
 
-## Build Setup
+npm run build 项目编译
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+编译完成之后在 dist 文件内执行 http-server(工具包) 即可在服务器打开
