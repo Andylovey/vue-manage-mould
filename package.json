@@ -5,11 +5,17 @@
   "author": "许泽桐 <749807312@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
-    "build": "node build/build.js"
+    "dev": "cross-env env_config=dev webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "uat": "cross-env env_config=uat webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "prod": "cross-env env_config=prod webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "test": "cross-env env_config=test webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "build": "node build/build.js",
+    "build:test": "cross-env NODE_ENV=test env_config=test node build/build.js",
+    "build:prod": "cross-env NODE_ENV=production env_config=prod node build/build.js",
+    "build:uat": "cross-env NODE_ENV=uat env_config=uat node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "view-design": "^4.4.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
@@ -26,6 +32,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^7.0.3",
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",

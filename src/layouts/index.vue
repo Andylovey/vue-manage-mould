@@ -4,8 +4,8 @@
             <v-header />
             <Layout>
                 <Sider hide-trigger :style="{background: '#fff'}">
-                    <Menu theme="light" width="auto">
-                        <v-menu :menuList="menuRes" /> 
+                    <Menu theme="light" width="auto" :active-name="$route.path" :open-names="openName" v-if="menuRes.length != 0">
+                        <v-menu :menuList="menuRes"/> 
                     </Menu>
                 </Sider>
                 <Content>
@@ -18,24 +18,40 @@
     </div>
 </template>
 <script>
-import vHeader from '@/layouts/header';
-import vMenu from '@/layouts/menu';
+import VHeader from '@/layouts/header';
+import VMenu from '@/layouts/menu';
 import {menuData} from '@/mock/menu.js';
 export default {
     components: {
-        vHeader,
-        vMenu
+        VHeader,
+        VMenu
     },
     data() {
         return {
-            menuRes: []
+            menuRes: [],
+            openName: []
         }
     },
     created() {
         menuData().then(res => {
-            console.log(res)
-           this.menuRes = res
+           this.menuRes = res;
+           /**
+            * 遍历后端返回来的菜单栏进行递归 根据当前页面路由与后端返回来的路由配对而展开对应的菜单
+            */
+            this.getOpenNames(res)
         })
+    },
+    methods: {
+        getOpenNames(list) {
+            list.forEach(item => {
+                if(this.$route.path.includes(item.path)) {
+                    this.openName.push(item.path)
+                    if(item.children && item.children.length != 0) {
+                         this.getOpenNames(item.children)
+                    } 
+                }
+            })
+        }
     }
 };
 </script>

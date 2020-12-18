@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/views/index'
-import LOL from '@/views/game/lol'
+import LOL from '@/views/Game/lol'
+import Error from '@/views/NotFound/error'
+import Basketball from '@/views/Sport/basketball'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -16,6 +18,25 @@ export default new Router({
       path: '/game/lol',
       name: 'lol',
       component: LOL
+    },
+    {
+      path: '/sport/basketball',
+      name: 'basketball',
+      component: Basketball
+    },
+    {
+      path: '*',
+      name: 'error',
+      component: Error,
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  console.log(to)
+  next()
+})
+
+export default router
+
+
