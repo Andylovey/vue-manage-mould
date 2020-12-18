@@ -1,7 +1,7 @@
-import axios from 'axios'
+import request from './index'
 
 export const get = (url, data) => {
-    return axios.get(url, {params: data})
+    return request.get(url, {params: data})
 }
 
 /**
@@ -10,5 +10,5 @@ export const get = (url, data) => {
  * content-type：application/x-www-form-urlencoded 需使用qs转为表单格式
  */
 export const post = (url, data) => {
-    return axios.post(url, data)
+    return request.post(url, data)
 }

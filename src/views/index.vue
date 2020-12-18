@@ -12,8 +12,10 @@ export default {
       console.log(res);
     });
 
-    getData().then(res => {
-      console.log('r',res)
+    getData({
+      uid: 501749963617992704
+    }).then(res => {
+      console.log(res)
     })
   },
 };

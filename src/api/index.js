@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = process.env.API_ROOT;
-
-axios.defaults.timeout = 10000;
+let request = axios.create({
+    baseURL: process.env.API_ROOT,
+    timeout: 10000
+})
 
 /**
  * 请求头拦截
  */
-axios.interceptors.request.use((config) => {
+request.interceptors.request.use((config) => {
     let token = localStorage.getItem('token');
     token && (config.headers.Authorization = token);
     return config
@@ -16,7 +17,7 @@ axios.interceptors.request.use((config) => {
 })
 
 
-axios.interceptors.response.use((res) => {
+request.interceptors.response.use((res) => {
     if(res.status == 200) {
         return Promise.resolve(res)
     }
@@ -28,3 +29,5 @@ axios.interceptors.response.use((res) => {
     }
     return Promise.reject(err)
 })
+
+export default request

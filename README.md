@@ -25,7 +25,7 @@ npm run build 项目编译
 
 npm i --save-dev cross-env
 
-```打包
+··· 打包
 
 1.在config文件夹下配置需要的环境
 
@@ -41,7 +41,7 @@ var spinner = ora('building for ' + process.env.NODE_ENV + ' of ' + process.env.
 
 5.打包命令即可对应出来的环境
 
-```运行
+··· 运行
 
 1.在 build/webpack.dev.conf.js ，
 const runpath = '../config/' + process.env.env_config + '.env'
@@ -53,3 +53,13 @@ const runpath = '../config/' + process.env.env_config + '.env'
 3.运行命令即可对应出来的环境
 
 
+
+
+
+# 基本功能
+
+1.API 请求接口
+
+2.动态渲染菜单栏
+
+3.多环境配置
