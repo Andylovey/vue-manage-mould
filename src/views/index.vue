@@ -1,5 +1,5 @@
 <template>
-  <div>首页</div>
+  <Button @click="handleAddShopCart">加入购物车--vuex</Button>
 </template>
 
 <script>
@@ -18,6 +18,13 @@ export default {
       console.log(res)
     })
   },
+  methods: {
+    handleAddShopCart() {
+      this.$store.dispatch({
+        type: 'addShopAsync'
+      })
+    }
+  }
 };
 </script>
 

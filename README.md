@@ -32,6 +32,11 @@ npm i --save-dev cross-env
 2.在package.json文件配置命令
 
 3.修改config/index.js文件中build参数，这里的参数会在build/webpackage.prod.conf.js中使用到，之后就在webpackage.prod.conf.js文件设置
+
+*** config/index.js
+prodEnv: require('./prod.env'),
+
+*** webpackage.prod.conf.js
 // const env = require('../config/prod.env')
 const env = config.build[process.env.env_config+'Env']
 
@@ -63,3 +68,8 @@ const runpath = '../config/' + process.env.env_config + '.env'
 2.动态渲染菜单栏
 
 3.多环境配置
+
+
+# vuex 的使用
+
+相比localStorage和sessionStorage，vuex存储的数据可以即时更新，其他需要刷新才能更新。但是如果刷新页面的话，vuex存储的值会重置，而localStorage和sessionStorage存储的值不会重置。

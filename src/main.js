@@ -3,8 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// view-design UI
 import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
+// store
+import store from './store';
 
 Vue.use(ViewUI)
 
@@ -15,5 +18,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store
 })
