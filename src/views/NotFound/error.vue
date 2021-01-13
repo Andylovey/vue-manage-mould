@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>404</h1>        
+    <div class="error flex_c_c">
+        <img src="@/assets/404.png" alt="">       
     </div>
 </template>
 
@@ -11,5 +11,8 @@ export default {
 </script>
 
 <style scoped>
-    
+    .error {
+        width: 100%;
+        height: 100%;
+    }
 </style>

@@ -1,0 +1,50 @@
+
+.tlc {
+    text-align: center;
+}
+
+.mr_10 {
+    margin-right: 10px;
+}
+
+.mb_10 {
+    margin-bottom: 10px;
+}
+
+.mt_10 {
+    margin-top: 10px;
+}
+
+.ml_10 {
+    margin-left: 10px;
+}
+
+.fs_12 {
+    font-size: 12px;
+}
+
+.fs_16 {
+    font-size: 16px;
+}
+
+.c_eee {
+    color: #eeeeee;
+}
+.c_fff {
+    color: #ffffff;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex_c_c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex_end {
+    display: flex;
+    justify-content: flex-end;
+}

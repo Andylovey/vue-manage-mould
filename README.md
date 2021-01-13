@@ -11,9 +11,9 @@
 
 # bash
 
-npm run dev  项目开启
+npm run (dev / uat / prod / test)  项目开启
 
-npm run build 项目编译
+npm run (build:dev / build:uat / build:prod / build:test) 项目编译
 
 编译完成之后在 dist 文件内执行 http-server(工具包) 即可在服务器打开
 
@@ -73,3 +73,8 @@ const runpath = '../config/' + process.env.env_config + '.env'
 # vuex 的使用
 
 相比localStorage和sessionStorage，vuex存储的数据可以即时更新，其他需要刷新才能更新。但是如果刷新页面的话，vuex存储的值会重置，而localStorage和sessionStorage存储的值不会重置。
+
+
+# 要点补充
+
+1.要想await生效，后面的异步操作必须返回一个promise

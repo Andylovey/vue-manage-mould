@@ -6,12 +6,17 @@ import router from './router'
 // view-design UI
 import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
+Vue.use(ViewUI)
+
+import lst from '@/utils/lst.js'
+
+import '@/styles/common.css';
 // store
 import store from './store';
 
-Vue.use(ViewUI)
 
 Vue.config.productionTip = false
+Vue.prototype.$lst = lst
 
 /* eslint-disable no-new */
 new Vue({

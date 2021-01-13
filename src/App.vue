@@ -1,16 +1,12 @@
 <template>
   <div id="app">
-    <v-layout />   
+    <router-view />
   </div>
 </template>
 
 <script>
-import VLayout from '@/layouts/index.vue'
 export default {
-  name: 'App',
-  components: {
-    VLayout
-  }
+  name: 'App'
 }
 </script>
 

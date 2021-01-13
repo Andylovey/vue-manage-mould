@@ -1,18 +1,28 @@
 <template>
     <div class="layout">
         <Layout>
-            <v-header />
+            <!-- <v-header /> -->
             <Layout>
-                <Sider hide-trigger :style="{background: '#fff'}">
-                    <Menu theme="light" width="auto" :active-name="$route.path" :open-names="openName" v-if="menuRes.length != 0">
+                <Sider hide-trigger>
+                    <Menu theme="dark" width="auto" :active-name="$route.path" :open-names="openName" v-if="menuRes.length != 0">
                         <v-menu :menuList="menuRes"/> 
                     </Menu>
                 </Sider>
-                <Content>
+                <!-- <Content>
                     <div class="layout-content">
                         <router-view/>
                     </div>
-                </Content>
+                </Content> -->
+                <Layout>
+                    <Header :style="{padding: 0}" class="layout-header-bar">
+                        <v-header />
+                    </Header>
+                    <Content>
+                        <div class="layout-content">
+                            <router-view/>
+                        </div>
+                    </Content>
+                </Layout>
             </Layout> 
         </Layout>
     </div>
@@ -85,5 +95,9 @@ export default {
     height: 100%;
     padding: 24px;
     overflow: auto;
+}
+.layout-header-bar {
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12), 0 0 3px 0 rgba(0,0,0,.04);
 }
 </style>
